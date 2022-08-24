@@ -13,7 +13,7 @@ function App() {
   const [error, setError] = useState<string | undefined>();
 
   function connect() {
-    invoke("connect").then((msg: any) => {
+    invoke("query_todos").then((msg: any) => {
       console.log('THEN', msg);
       setData(msg as Todo[])
     }).catch(err => setError(`ERR: ${err}`));
